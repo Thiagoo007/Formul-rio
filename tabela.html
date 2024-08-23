@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+</head>
+<body>
+    <h2>Tabela de Contato</h2>
+
+<table id="tabela-contatos" border="1">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>CEP</th>
+            <th>UF</th>
+            <th>Cidade</th>
+        </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
+<script>
+
+const contatos = [
+    {
+        nome: 'Maria Silva',
+        telefone: '(11) 91234-5678',
+        email: 'maria.silva@example.com',
+        cep: '01001-000',
+        uf: 'SP',
+        cidade: 'São Paulo'
+    },
+    {
+        nome: 'João Souza',
+        telefone: '(21) 98765-4321',
+        email: 'joao.souza@example.com',
+        cep: '20040-010',
+        uf: 'RJ',
+        cidade: 'Rio de Janeiro'
+    },
+    {
+        nome: 'Ana Pereira',
+        telefone: '(31) 99876-5432',
+        email: 'ana.pereira@example.com',
+        cep: '30130-000',
+        uf: 'MG',
+        cidade: 'Belo Horizonte'
+    }
+];
+
+
+function preencherTabela(contatos) {
+    const tabela = document.getElementById('tabela-contatos').getElementsByTagName('tbody')[0];
+
+    contatos.forEach(contato => {
+      
+        const novaLinha = tabela.insertRow();
+
+        const celulaNome = novaLinha.insertCell(0);
+        const celulaTelefone = novaLinha.insertCell(1);
+        const celulaEmail = novaLinha.insertCell(2);
+        const celulaCep = novaLinha.insertCell(3);
+        const celulaUf = novaLinha.insertCell(4);
+        const celulaCidade = novaLinha.insertCell(5);
+
+       
+        celulaNome.textContent = contato.nome;
+        celulaTelefone.textContent = contato.telefone;
+        celulaEmail.textContent = contato.email;
+        celulaCep.textContent = contato.cep;
+        celulaUf.textContent = contato.uf;
+        celulaCidade.textContent = contato.cidade;
+    });
+}
+
+
+preencherTabela(contatos);
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>
